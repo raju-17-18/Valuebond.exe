@@ -262,13 +262,14 @@ function unlock(){
     const letter=document.getElementById('letterBox');
     letter.style.display='block';
     letter.style.animation='open 1.2s ease-out forwards';
+    /* unmute music on first tap */
+document.addEventListener('click',()=>{const a=document.getElementById('bgm');
+  if(a.muted){a.muted=false;a.play().catch(()=>{});}},{once:true});
+
   }else{
     err.textContent='Incorrect username or password.';
   }
 }
-/* unmute music on first tap */
-document.addEventListener('click',()=>{const a=document.getElementById('bgm');
-  if(a.muted){a.muted=false;a.play().catch(()=>{});}},{once:true});
 </script>
 </body>
 </html>
